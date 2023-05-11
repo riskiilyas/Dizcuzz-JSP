@@ -51,7 +51,7 @@
     <% } %>
     <div class="form-floating">
         <input type="email" class="form-control <% if (request.getAttribute("javax.servlet.error.exception") != null) { %> is-invalid <% } %>"
-               value="<%=session.getAttribute("email")%>" id="floatingInput" placeholder="name@example.com" name="email">
+               value="<%String mEmail = (String) session.getAttribute("email"); out.print((mEmail==null) ? "" : mEmail);%>" id="floatingInput" placeholder="name@example.com" name="email">
         <label for="floatingInput">Email address</label>
         <% if (request.getAttribute("javax.servlet.error.exception") != null) { %>
             <div class="invalid-feedback">
@@ -67,7 +67,7 @@
 
     <div class="form-floating">
         <input type="password" class="form-control <% if (request.getAttribute("javax.servlet.error.exception") != null) { %> is-invalid <% } %>"
-               value="<%=session.getAttribute("password")%>" id="floatingPassword" placeholder="Password" name="password">
+               value="<%String pass = (String) session.getAttribute("password"); out.print((pass==null) ? "" : pass);%>" id="floatingPassword" placeholder="Password" name="password">
         <label for="floatingPassword">Password</label>
         <% if (request.getAttribute("javax.servlet.error.exception") != null) { %>
             <div class="invalid-feedback">

@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Dizcuzz · Home</title>
+    <title>Dizcuzz · New Post</title>
     <link rel="icon" type="image/x-icon" href="images/icon.jpg">
 
 
@@ -36,9 +36,10 @@
 <body class="discussion">
 
     <section class="discussion-title">
+
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/">
                     <img src="images/icon.png" alt="" width="30" height="30" class="d-inline-block align-text-top" style="margin-right: 1rem">
                     Dizcuzz
                 </a>
@@ -59,7 +60,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="/profile">View Profile</a></li>
-                                <li><a class="dropdown-item" href="changepassword.jsp">Change Password</a></li>
+                                <li><a class="dropdown-item" href="/change_password">Change Password</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -67,7 +68,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="newpost.jsp">New Post</a>
+                            <a class="nav-link" href="/new_post">New Post</a>
                         </li>
                     </ul>
                     <form class="d-flex" action="/search/discussion">
@@ -75,10 +76,30 @@
                         <button class="btn btn-outline-primary" type="submit">Search</button>
                     </form>
                 </div>
+            </div>
         </nav>
-       
+        <main class="discussion-title-content">
+            <h1 class="mb-5 mt-2">
+                Create a New Discussion
+            </h1>
+            <div class="create-discussion">
+          		<form action="/new_post" method="post" class="form">
+				  <input type="hidden" name="csrf_token" value="<%= request.getAttribute("org.owasp.csrfguard.TokenName") %>" />
+				  <textarea name="title" cols="50" rows="1" class="discussion-ttl mb-3" placeholder="Title" style="resize:none;"></textarea>
+				  <textarea name="description" cols="100" rows="10" class="discussion-details mb-3" placeholder="Discussion" style="resize:none;"></textarea>
+				  <br>
+				  <button type="submit" class="post-button">Post New Discussion</button>
+				</form>
+
+                <div>
+                    <hr>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </main>
     </section>
     <br>
-
     <br>
 </body>
+</html>

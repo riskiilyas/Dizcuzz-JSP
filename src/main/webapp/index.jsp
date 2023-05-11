@@ -15,7 +15,7 @@ if (isLoggedIn != null && isLoggedIn) {
     response.sendRedirect("homepage.jsp");
 } else {
     // User is not logged in, redirect to login page
-    response.sendRedirect("login.jsp");
+    response.sendRedirect("homepage.jsp");
 }
 %>
 </body>
