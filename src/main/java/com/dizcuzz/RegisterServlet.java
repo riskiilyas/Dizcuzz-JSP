@@ -37,7 +37,7 @@ public class RegisterServlet extends HttpServlet {
       conn = DriverManager.getConnection(url);
 
       // Prepare SQL statement
-      String sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
+      String sql = "INSERT INTO users (name, email, password, created_at, updated_at) VALUES (?, ?, ?)";
       PreparedStatement statement = conn.prepareStatement(sql);
       statement.setString(1, name);
       statement.setString(2, email);

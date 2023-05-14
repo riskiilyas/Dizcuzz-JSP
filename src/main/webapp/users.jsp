@@ -4,9 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Dizcuzz · Home</title>
+    <title>Dizcuzz · Users</title>
     <link rel="icon" type="image/x-icon" href="images/icon.jpg">
 
 
@@ -30,15 +29,16 @@
     </style>
     <script src="bootstrap/js/bootstrap.js"></script>
     <!-- Custom styles for this template -->
-    <link href="styles/home.css" rel="stylesheet">
+    <link href="styles/users.css" rel="stylesheet">
 </head>
 
 <body class="discussion">
 
     <section class="discussion-title">
+
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/">
                     <img src="images/icon.png" alt="" width="30" height="30" class="d-inline-block align-text-top" style="margin-right: 1rem">
                     Dizcuzz
                 </a>
@@ -48,10 +48,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                            <a class="nav-link" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="users.jsp">Users</a>
+                            <a class="nav-link active" href="/users">Users</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -59,7 +59,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="/profile">View Profile</a></li>
-                                <li><a class="dropdown-item" href="changepassword.jsp">Change Password</a></li>
+                                <li><a class="dropdown-item" href="/change_password">Change Password</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -67,16 +67,28 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="newpost.jsp">New Post</a>
+                            <a class="nav-link" href="/new_post">New Post</a>
                         </li>
                     </ul>
-                    <form class="d-flex" action="/search/discussion">
-                        <input name="title" class="form-control me-2" type="search" placeholder="Search Discussions" aria-label="Search">
+                    <form class="d-flex" method="get" action="/search/user">
+                        <input name="username" class="form-control me-2" type="search" placeholder="Search Users" aria-label="Search">
                         <button class="btn btn-outline-primary" type="submit">Search</button>
                     </form>
                 </div>
+            </div>
         </nav>
-       
+
+        <div class="wrapper">
+            <form action="/user/">
+                <div class="user-display">
+                    <div class="user-information">
+                        <img class="profile-logo" src="images/profile.png" alt="profile-logo">usermee
+
+                        <button type="submit" class="follow-button">View</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </section>
     <br>
 
